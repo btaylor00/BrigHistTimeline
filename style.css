@@ -79,7 +79,7 @@ main {
 
 .vis-timeline {
     border: 2px solid rgb(0, 0, 0);
-      font-family:  purisa, 'comic sans', cursive;
+      font-family:  purisa, 'comic sans', sans-serif;
       font-size: 8pt;
       /*  background: #d4ebf7; */
 }
