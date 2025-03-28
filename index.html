@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brigantine Historical Timeline</title>
+    <!-- Vis Timeline CSS -->
+    <link href="vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header class="title-banner">
+        <h1>Brigantine Historical Timeline</h1>
+    </header>
+
+    <!-- Add Filter Input -->
+    <div class="filter-container">
+        <input type="text" id="filter-input" placeholder="Filter events..." oninput="filterTimelineEvents()">
+    </div>
+
+    <main>
+        <div id="timeline-container">
+            <div class="loading-indicator">Loading Timeline Data...</div>
+        </div>
+    </main>
+
+    <!-- Popup Structure (hidden initially) -->
+    <div id="event-popup" class="popup" style="display: none;">
+        <button class="popup-close-btn" onclick="hidePopup()">×</button>
+        <h3 id="popup-title">Event Title</h3>
+        <div class="popup-content">
+            <p><strong>Date:</strong> <span id="popup-date"></span></p>
+            <!-- Placeholder for Image Rotator/Details -->
+            <div id="popup-image-rotator" style="min-height: 50px; background-color: #eee; border: 1px dashed #ccc; text-align: center; padding: 10px; margin-top: 10px;">
+                [Image Rotator / More Details Area]
+            </div>
+            <p id="popup-details"></p> <!-- Optional: for more text -->
+        </div>
+    </div>
+
+    <!-- Vis Timeline JS -->
+    <script src="https://unpkg.com/vis-timeline@latest/standalone/umd/vis-timeline-graph2d.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

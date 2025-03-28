@@ -1,0 +1,208 @@
+/* Basic Reset & Body Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.0;
+    color: #333;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Title Banner */
+.title-banner {
+    background-color: #0056b3; /* Dark blue */
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.title-banner h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Main Content Area */
+main {
+    flex-grow: 1; /* Allows main to fill available space */
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 1600px; /* Limit max width on very large screens */
+    margin: 0 auto; /* Center the main content */
+}
+
+/* Timeline Container */
+#timeline-container {
+    width: 100%;
+    height: 75vh; /* Adjust height as needed, vh is good for responsiveness */
+    min-height: 500px; /* Minimum height */
+    border: 1px solid #000000;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    position: relative; /* Needed for absolute positioning of loading indicator */
+}
+
+.loading-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Vis Timeline Customizations (Examples) */
+.vis-item {
+    color: #333;
+    font-size: 0.9rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+
+.vis-item.vis-selected {
+    border-color: green;
+    background-color: lightgreen;
+    
+  }
+
+/* Style for items within specific groups if needed */
+/* .vis-item.group-politics { background-color: #f0e68c; } */
+/* .vis-item.group-technology { background-color: #90ee90; } */
+
+.vis-timeline {
+    border: 2px solid rgb(0, 0, 0);
+      font-family:  purisa, 'comic sans', cursive;
+      font-size: 8pt;
+      /*  background: #d4ebf7; */
+}
+
+.vis-labelset .vis-label .vis-inner {
+    padding: 8x; /* More padding for group labels */
+
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Popup Styling */
+.popup {
+    position: absolute; /* Positioned by JavaScript */
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 15px 20px;
+    z-index: 1000;
+    min-width: 250px;
+    max-width: 400px;
+    font-size: 0.9rem;
+    /* Simple fade-in animation */
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+}
+
+.popup.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.popup-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    padding: 0 5px;
+}
+.popup-close-btn:hover {
+    color: #333;
+}
+
+.popup h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #0056b3;
+    font-size: 1.1rem;
+}
+
+.popup-content p {
+    margin-bottom: 8px;
+}
+
+#popup-image-rotator {
+    margin-top: 12px;
+    margin-bottom: 8px;
+    /* Add more specific styles when content is ready */
+}
+
+.vis-bg-area1 {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+/* Filter Input Box */
+.filter-container {
+    position: sticky;
+    top: 0;
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+}
+
+#filter-input {
+    width: 80%;
+    max-width: 400px;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .title-banner {
+        padding: 0.8rem 1rem;
+    }
+    .title-banner h1 {
+        font-size: 1.5rem;
+    }
+    main {
+        padding: 1rem;
+    }
+    #timeline-container {
+        height: 70vh;
+        min-height: 400px;
+    }
+    .vis-item {
+        font-size: 0.8rem;
+    }
+    .popup {
+        max-width: 90%; /* Allow popup to use more screen width */
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-banner h1 {
+        font-size: 1.3rem;
+    }
+    .vis-labelset .vis-label .vis-inner {
+        padding: 5px;
+    }
+}
+
+
+
